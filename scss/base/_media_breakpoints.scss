@@ -1,0 +1,29 @@
+@mixin dekstop {
+    @media (max-width : $breakpoints-xxl) {
+        @content;
+    }
+}
+
+@mixin dekstop-u {
+    @media (min-width : $breakpoints-xxl) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (max-width : $breakpoints-xl) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width : $breakpoints-md) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width : $breakpoints-sm) {
+        @content;
+    }
+}

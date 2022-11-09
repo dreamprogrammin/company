@@ -1,0 +1,257 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  display: block;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #2F343A;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+a {
+  color: #fff;
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+}
+.header__top {
+  background-color: #C8A35F;
+}
+.header__top-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+}
+.header__top-lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+.header__top-item a {
+  opacity: 0.7;
+  transition: .3s ease-in-out;
+}
+.header__top-item a:hover {
+  opacity: 1;
+}
+
+.number {
+  opacity: .7;
+  transition: .3s ease-in-out;
+}
+.number:hover {
+  opacity: 1;
+}
+
+.email {
+  opacity: .7;
+  transition: .3s ease-in-out;
+}
+.email:hover {
+  opacity: 1;
+}
+
+.header__bottom {
+  width: 100%;
+  background-color: #2F343A;
+}
+.header__bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+.header__bottom-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.header__info-logo {
+  width: 190px;
+  position: relative;
+}
+.header__info-logo::before {
+  position: absolute;
+  content: '';
+  height: 46px;
+  width: 1px;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+}
+.header__info-office .info__link {
+  display: inline-block;
+  padding-left: 32px;
+  line-height: 25px;
+  background: url("/img/placeholder.svg") no-repeat left;
+}
+.header__bottom-menu {
+  display: block;
+}
+.header__menu-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.header__list-item {
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: .3s ease-in-out;
+  font-size: 14px;
+  font-weight: 400;
+}
+.header__list-item:hover {
+  opacity: 1;
+  font-size: 14.5px;
+}
+
+.info__link {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.intro {
+  background: url(/img/intro/intro_bg.jpeg) no-repeat center center;
+  height: 100vh;
+  background-size: cover;
+}
+.intro__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+.intro__border {
+  padding: 45px 72px;
+  border: 1px solid #C8A35F;
+}
+.intro__title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(34px + 30 * (100vw / 1110));
+  line-height: 75px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  max-width: 777px;
+  min-height: 59px;
+  color: #fff;
+  margin-bottom: 45px;
+  text-align: center;
+  overflow: hidden;
+}
+.intro__text {
+  color: #fff;
+  max-width: 777px;
+  text-align: center;
+}
+.intro__decor {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: url(/img/intro/mouse.svg) no-repeat center;
+  animation: animate-decor .8s linear infinite alternate;
+}
+
+@keyframes animate-decor {
+  0% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: 70px;
+  }
+}
+@media (min-width: 1110px) {
+  .intro__title {
+    font-size: 64px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,25 @@
+$color-gold : #C8A35F;
+$color-dark : #2F343A;
+$color-white :#fff;
+
+$breakpoints-xxl: 1110px;
+$breakpoints-xl: 1024px;
+$breakpoints-md: 763px;
+$breakpoints-sm: 576px;
+
+
+%title{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+@mixin flex-container ($jc, $ai) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
