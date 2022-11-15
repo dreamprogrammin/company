@@ -1,0 +1,94 @@
+.slider {
+    position: relative;
+    height: 100vh;
+    &::after{
+        position: absolute;
+        content: '';
+        width: 561px;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        background-color: #393F47;
+    }
+    &::before{
+        position: absolute;
+        content: '';
+        width: 561px;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        z-index: 0;
+        background-color: #393F47;
+    }
+
+    &__wrapper {
+        @include flex-container(center, center);
+        flex-wrap: wrap;
+        height: 100vh;
+    }
+
+    &__content {
+        @include flex-container(center, flex-start);
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    &__content-title {
+        margin-bottom: 30px;
+        max-width: 445px;
+    }
+
+    &__content-text {
+        margin-bottom: 50px;
+        max-width: 345px;
+        line-height: 28px;
+
+        color: $color-white;
+    }
+
+    &__contnet-button {
+        background-color: $color-gold;
+        padding: 18px 48px;
+        color: $color-white;    
+    }
+
+    &__container {
+        z-index: 1;
+        @include flex-container(center,center);
+        row-gap: 20px;
+    }
+
+    &__container-buttons {
+        z-index: 1;
+        height: 265px;
+        @include flex-container(space-between, center);
+        flex-direction: column;
+    }
+
+    &__button {
+        cursor: pointer;
+        height: 20px;
+        width: 165px;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: $color-gold;
+        transition: .3s ease-in-out;
+        &.next{
+            text-align: start;
+            background: url(/img/slider-img/arrow-next.svg) no-repeat 90% center;
+            &:hover, &:focus{
+                background: url(/img/slider-img/arrow-next.svg) no-repeat right;
+            }
+        }
+        &.prev{
+            text-align: end;
+            background: url(/img/slider-img/arrow-prev.svg) no-repeat 10% center;
+            &:hover, &:focus{
+                background: url(/img/slider-img/arrow-prev.svg) no-repeat left;
+            }
+        }
+    }
+
+}
+

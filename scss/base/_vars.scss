@@ -16,6 +16,7 @@ $breakpoints-sm: 576px;
     line-height: 49px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    color: $color-white;
 }
 
 @mixin flex-container ($jc, $ai) {

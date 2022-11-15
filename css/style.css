@@ -71,6 +71,17 @@ a {
   text-decoration: none;
 }
 
+.title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
 body {
   background-color: #2F343A;
   font-family: 'Roboto', sans-serif;
@@ -248,9 +259,113 @@ a {
     bottom: 70px;
   }
 }
+.slider {
+  position: relative;
+  height: 100vh;
+}
+.slider::after {
+  position: absolute;
+  content: '';
+  width: 561px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: #393F47;
+}
+.slider::before {
+  position: absolute;
+  content: '';
+  width: 561px;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  background-color: #393F47;
+}
+.slider__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+.slider__content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  z-index: 1;
+}
+.slider__content-title {
+  margin-bottom: 30px;
+  max-width: 445px;
+}
+.slider__content-text {
+  margin-bottom: 50px;
+  max-width: 345px;
+  line-height: 28px;
+  color: #fff;
+}
+.slider__contnet-button {
+  background-color: #C8A35F;
+  padding: 18px 48px;
+  color: #fff;
+}
+.slider__container {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+.slider__container-buttons {
+  z-index: 1;
+  height: 265px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.slider__button {
+  cursor: pointer;
+  height: 20px;
+  width: 165px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #C8A35F;
+  transition: .3s ease-in-out;
+}
+.slider__button.next {
+  text-align: start;
+  background: url(/img/slider-img/arrow-next.svg) no-repeat 90% center;
+}
+.slider__button.next:hover, .slider__button.next:focus {
+  background: url(/img/slider-img/arrow-next.svg) no-repeat right;
+}
+.slider__button.prev {
+  text-align: end;
+  background: url(/img/slider-img/arrow-prev.svg) no-repeat 10% center;
+}
+.slider__button.prev:hover, .slider__button.prev:focus {
+  background: url(/img/slider-img/arrow-prev.svg) no-repeat left;
+}
+
 @media (min-width: 1110px) {
   .intro__title {
     font-size: 64px;
+  }
+}
+@media (max-width: 763px) {
+  .slider__container {
+    flex-wrap: wrap;
+  }
+  .slider__container-buttons {
+    flex-direction: row;
+    height: 20px;
+    width: 100%;
+    flex-flow: row-reverse;
+    column-gap: 20px;
   }
 }
 
