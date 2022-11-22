@@ -80,6 +80,17 @@ a {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #fff;
+  position: relative;
+}
+.title::after {
+  position: absolute;
+  content: '';
+  width: 15%;
+  height: 6px;
+  top: 0;
+  left: 0;
+  background-color: #C8A35F;
+  margin-top: -40px;
 }
 
 body {
@@ -94,7 +105,7 @@ a {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1130px;
   width: 100%;
   margin: 0 auto;
   padding: 0 10px;
@@ -205,7 +216,7 @@ a {
 }
 
 .intro {
-  background: url(../../img/intro/intro_bg.jpeg) no-repeat center center;
+  background: url("../img/intro/intro_bg.jpeg") no-repeat center center;
   height: 100vh;
   background-size: cover;
 }
@@ -247,7 +258,7 @@ a {
   left: 50%;
   width: 30px;
   height: 30px;
-  background: url(/img/intro/mouse.svg) no-repeat center;
+  background: url(../img/intro/mouse.svg) no-repeat center;
   animation: animate-decor .8s linear infinite alternate;
 }
 
@@ -262,12 +273,13 @@ a {
 .slider {
   position: relative;
   height: 100vh;
+  margin-bottom: 120px;
 }
 .slider::after {
   position: absolute;
   content: '';
-  width: 561px;
-  height: 100vh;
+  width: 33%;
+  height: 100%;
   top: 0;
   left: 0;
   z-index: 0;
@@ -276,8 +288,8 @@ a {
 .slider::before {
   position: absolute;
   content: '';
-  width: 561px;
-  height: 100vh;
+  width: 33%;
+  height: 100%;
   top: 0;
   right: 0;
   z-index: 0;
@@ -311,6 +323,14 @@ a {
   background-color: #C8A35F;
   padding: 18px 48px;
   color: #fff;
+  transition: .3s ease-in-out;
+}
+.slider__contnet-button:hover, .slider__contnet-button:focus {
+  background-color: #2F343A;
+  border: 1px solid #C8A35F;
+  -webkit-box-shadow: 0px 0px 34px 1px rgba(200, 163, 95, 0.34);
+  -moz-box-shadow: 0px 0px 34px 1px rgba(200, 163, 95, 0.34);
+  box-shadow: 0px 0px 34px 1px rgba(200, 163, 95, 0.34);
 }
 .slider__container {
   z-index: 1;
@@ -338,17 +358,65 @@ a {
 }
 .slider__button.next {
   text-align: start;
-  background: url(/img/slider-img/arrow-next.svg) no-repeat 90% center;
+  background: url("../img/slider-img/arrow-next.svg") no-repeat 90% center;
 }
 .slider__button.next:hover, .slider__button.next:focus {
-  background: url(/img/slider-img/arrow-next.svg) no-repeat right;
+  background: url("../img/slider-img/arrow-next.svg") no-repeat right;
 }
 .slider__button.prev {
   text-align: end;
-  background: url(/img/slider-img/arrow-prev.svg) no-repeat 10% center;
+  background: url("../img/slider-img/arrow-prev.svg") no-repeat 10% center;
 }
 .slider__button.prev:hover, .slider__button.prev:focus {
-  background: url(/img/slider-img/arrow-prev.svg) no-repeat left;
+  background: url("../img/slider-img/arrow-prev.svg") no-repeat left;
+}
+
+.service__title {
+  margin-bottom: 60px;
+}
+.service__grids {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 276px));
+  justify-items: stretch;
+  justify-content: center;
+}
+.service__grid {
+  height: 180px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+  padding: 35px;
+  position: relative;
+  transition: .3s ease-in-out;
+}
+.service__grid:hover, .service__grid:focus {
+  background-color: #C8A35F;
+}
+.service__grid::after {
+  position: absolute;
+  content: '';
+  background: url(../../img/service/airbus.svg) no-repeat center center;
+  width: 70px;
+  height: 70px;
+  top: 20%;
+  transition: .3s ease-in-out;
+  border-radius: 50%;
+}
+.service__grid:hover::after, .service__grid:focus::after {
+  background: url(../../img/service/airbus-active.svg) no-repeat center center;
+  background-color: #fff;
+}
+.service__grid-title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 @media (min-width: 1110px) {

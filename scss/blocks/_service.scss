@@ -1,0 +1,50 @@
+.service {
+    &__title{
+        margin-bottom: 60px;
+    }
+    &__grids {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(auto, 276px));
+        justify-items: stretch;
+        justify-content: center;
+    }
+
+    &__grid {
+        height: 180px;
+        @include flex-container(end,center);
+        flex-direction: column;
+        padding: 35px;
+        position: relative;
+        transition: .3s ease-in-out;
+        &:hover, &:focus{
+            background-color: $color-gold;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            background: url(../../img/service/airbus.svg) no-repeat center center;
+            width: 70px;
+            height: 70px;
+            top: 20%;
+            transition: .3s ease-in-out;
+            border-radius: 50%;
+        }
+        &:hover::after ,&:focus::after{
+            background: url(../../img/service/airbus-active.svg) no-repeat center center;
+            background-color: $color-white;
+        }
+    }
+
+    &__grid-title {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $color-white;
+        
+    }
+}

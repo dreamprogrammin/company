@@ -17,6 +17,17 @@ $breakpoints-sm: 576px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: $color-white;
+    position: relative;
+    &::after{
+        position: absolute;
+        content: '';
+        width: 15%;
+        height: 6px;
+        top: 0;
+        left: 0;
+        background-color: $color-gold;
+        margin-top: -40px;
+    }
 }
 
 @mixin flex-container ($jc, $ai) {

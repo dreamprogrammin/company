@@ -1,5 +1,6 @@
 .intro {
-    background: url(../../img/intro/intro_bg.jpeg) no-repeat center center;
+    background: url('../img/intro/intro_bg.jpeg') no-repeat center center;
+    
     height: 100vh;
     background-size: cover;
 
@@ -43,7 +44,7 @@
         left: 50%;
         width: 30px;
         height: 30px;
-        background: url(/img/intro/mouse.svg) no-repeat center;
+        background: url(../img/intro/mouse.svg) no-repeat center;
         animation: animate-decor .8s linear infinite alternate;
     }
 }
