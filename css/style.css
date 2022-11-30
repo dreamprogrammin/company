@@ -85,7 +85,7 @@ a {
 .title::after {
   position: absolute;
   content: '';
-  width: 15%;
+  width: 90px;
   height: 6px;
   top: 0;
   left: 0;
@@ -98,6 +98,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 400;
+  color: #fff;
 }
 
 a {
@@ -371,14 +372,27 @@ a {
   background: url("../img/slider-img/arrow-prev.svg") no-repeat left;
 }
 
+.service__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.service__content {
+  width: 100%;
+}
 .service__title {
   margin-bottom: 60px;
+  max-width: 167px;
 }
 .service__grids {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(auto, 276px));
   justify-items: stretch;
   justify-content: center;
+  margin-bottom: 120px;
 }
 .service__grid {
   height: 180px;
@@ -389,6 +403,7 @@ a {
   padding: 35px;
   position: relative;
   transition: .3s ease-in-out;
+  cursor: pointer;
 }
 .service__grid:hover, .service__grid:focus {
   background-color: #C8A35F;
@@ -396,7 +411,7 @@ a {
 .service__grid::after {
   position: absolute;
   content: '';
-  background: url(../../img/service/airbus.svg) no-repeat center center;
+  background: url("../../img/service/airbus.svg") no-repeat center center;
   width: 70px;
   height: 70px;
   top: 20%;
@@ -404,7 +419,7 @@ a {
   border-radius: 50%;
 }
 .service__grid:hover::after, .service__grid:focus::after {
-  background: url(../../img/service/airbus-active.svg) no-repeat center center;
+  background: url("../../img/service/airbus-active.svg") no-repeat center center;
   background-color: #fff;
 }
 .service__grid-title {
@@ -417,6 +432,95 @@ a {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #fff;
+}
+
+.about {
+  position: relative;
+}
+.about::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 410px;
+  background-color: #393F47;
+  z-index: -1;
+}
+.about__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 65px;
+  height: 50vh;
+}
+.about__content {
+  max-width: 445px;
+}
+.about__content-title {
+  margin-bottom: 30px;
+  line-height: 70px;
+}
+.about__content-text {
+  font-size: 16px;
+}
+.about__grids {
+  display: grid;
+  width: 600px;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  align-self: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+}
+.about__grid {
+  background-color: #fff;
+  color: #2F343A;
+  height: 160px;
+  padding: 23px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.about__grid img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.about__grid-title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #2F343A;
+  margin-bottom: 10px;
+}
+.about__grid-subtitle {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #2F343A;
+  margin-bottom: 15px;
+}
+.about__grid-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
 }
 
 @media (min-width: 1110px) {
@@ -433,6 +537,11 @@ a {
     height: 20px;
     width: 100%;
     flex-flow: row-reverse;
+  }
+}
+@media (max-width: 763px) {
+  .about__grids {
+    width: 400px;
   }
 }
 

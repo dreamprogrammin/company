@@ -1,12 +1,24 @@
 .service {
+    &__wrapper{
+        @include flex-container(center,center);
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    &__content{
+        width: 100%;
+    }
     &__title{
         margin-bottom: 60px;
+        max-width: 167px;
     }
     &__grids {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(auto, 276px));
         justify-items: stretch;
         justify-content: center;
+        margin-bottom: 120px;
     }
 
     &__grid {
@@ -16,13 +28,14 @@
         padding: 35px;
         position: relative;
         transition: .3s ease-in-out;
+        cursor: pointer;
         &:hover, &:focus{
             background-color: $color-gold;
         }
         &::after{
             position: absolute;
             content: '';
-            background: url(../../img/service/airbus.svg) no-repeat center center;
+            background: url('../../img/service/airbus.svg') no-repeat center center;
             width: 70px;
             height: 70px;
             top: 20%;
@@ -30,7 +43,7 @@
             border-radius: 50%;
         }
         &:hover::after ,&:focus::after{
-            background: url(../../img/service/airbus-active.svg) no-repeat center center;
+            background: url('../../img/service/airbus-active.svg') no-repeat center center;
             background-color: $color-white;
         }
     }
