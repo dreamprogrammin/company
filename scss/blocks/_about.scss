@@ -4,9 +4,9 @@
         position: absolute;
         content: '';
         top: 0;
-        left: 50%;
+        left: 35%;
         height: 100%;
-        width: 410px;
+        width: 484px;
         background-color: #393F47;
         z-index: -1;
     }
@@ -14,7 +14,8 @@
         @include flex-container(center,center);
         flex-wrap: wrap;
         gap: 65px;
-        height: 50vh;
+        padding: 82px 0;
+        margin-bottom: 120px;
     }
 
     &__content {

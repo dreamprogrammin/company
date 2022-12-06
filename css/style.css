@@ -188,7 +188,7 @@ a {
   display: inline-block;
   padding-left: 32px;
   line-height: 25px;
-  background: url("/img/placeholder.svg") no-repeat left;
+  background: url("../img/placeholder.svg") no-repeat left;
 }
 .header__bottom-menu {
   display: block;
@@ -374,18 +374,13 @@ a {
 
 .service__wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  flex-direction: column;
   flex-wrap: wrap;
-  width: 100%;
-}
-.service__content {
-  width: 100%;
 }
 .service__title {
   margin-bottom: 60px;
-  max-width: 167px;
+  display: block;
 }
 .service__grids {
   display: grid;
@@ -393,6 +388,7 @@ a {
   justify-items: stretch;
   justify-content: center;
   margin-bottom: 120px;
+  width: 1120px;
 }
 .service__grid {
   height: 180px;
@@ -411,7 +407,7 @@ a {
 .service__grid::after {
   position: absolute;
   content: '';
-  background: url("../../img/service/airbus.svg") no-repeat center center;
+  background: url("../img/service/airbus.svg") no-repeat center center;
   width: 70px;
   height: 70px;
   top: 20%;
@@ -419,7 +415,7 @@ a {
   border-radius: 50%;
 }
 .service__grid:hover::after, .service__grid:focus::after {
-  background: url("../../img/service/airbus-active.svg") no-repeat center center;
+  background: url("../img/service/airbus-active.svg") no-repeat center center;
   background-color: #fff;
 }
 .service__grid-title {
@@ -441,9 +437,9 @@ a {
   position: absolute;
   content: '';
   top: 0;
-  left: 50%;
+  left: 35%;
   height: 100%;
-  width: 410px;
+  width: 484px;
   background-color: #393F47;
   z-index: -1;
 }
@@ -453,7 +449,8 @@ a {
   align-items: center;
   flex-wrap: wrap;
   gap: 65px;
-  height: 50vh;
+  padding: 82px 0;
+  margin-bottom: 120px;
 }
 .about__content {
   max-width: 445px;
@@ -523,6 +520,50 @@ a {
   text-align: center;
 }
 
+.container__maps {
+  height: 60vh;
+  width: 100%;
+}
+
+.footer {
+  width: 100%;
+  background-color: #C8A35F;
+}
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 65px 0;
+}
+.footer__adress {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  /* #F2F2F2 */
+  color: #F2F2F2;
+  opacity: 0.8;
+}
+.footer__email {
+  width: 291px;
+  color: #2F343A;
+}
+.footer__items {
+  width: 291px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer__number {
+  display: block;
+  width: 100%;
+}
+
 @media (min-width: 1110px) {
   .intro__title {
     font-size: 64px;
@@ -542,6 +583,12 @@ a {
 @media (max-width: 763px) {
   .about__grids {
     width: 400px;
+  }
+}
+@media (max-width: 1110px) {
+  .service__content {
+    width: 450px;
+    margin: 0 auto;
   }
 }
 
