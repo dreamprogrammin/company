@@ -7,27 +7,8 @@ $breakpoints-xl: 1024px;
 $breakpoints-md: 763px;
 $breakpoints-sm: 576px;
 
-
-%title{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 49px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: $color-white;
-    position: relative;
-    &::after{
-        position: absolute;
-        content: '';
-        width: 90px;
-        height: 6px;
-        top: 0;
-        left: 0;
-        background-color: $color-gold;
-        margin-top: -40px;
-    }
+.title{
+    @extend %title;
 }
 
 @mixin flex-container ($jc, $ai) {

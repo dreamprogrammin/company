@@ -1,0 +1,106 @@
+@include tablet{
+
+    .header {
+
+        &__info-logo{
+            position: static;
+        }
+
+        &__bottom-menu {
+            display: none;
+		}
+
+        &__popup{
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            z-index: 3;
+            @include flex-container(center,center);
+            background-color: $color-dark;
+            right: -100%;
+            transition: .3s ease-in-out;
+
+            &.active{
+                right: 0;
+            }
+
+            & .header__menu-list {
+                @include flex-container(center,center);
+                flex-direction: column;
+                width: 100%;
+                gap: 100px;
+            }
+
+            & .header__menu-list > .header__list-item{
+                width: 100%;
+            }
+
+            & .header__menu-list > .header__list-item a{
+                font-size: 20px;
+            }
+        }
+
+		&__list-item {
+		}
+
+        &__info-office{
+            display: none;
+        }
+
+
+		&__burger {
+            display: block;
+            position: relative;
+            width: 50px;
+            height: 35px;
+            z-index: 2;
+
+
+                &::after,
+                &::before,
+                &-line {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    left: 0;
+                    height: 3px;
+                    background-color: $color-white;
+                    transition: .3s ease-in-out;
+                    border-radius: 20px;
+                }
+
+                &::after{
+                   top: 0;
+                }
+            
+                &-line{
+                   top: 50%;
+                   transform: scale(1) translateY(-50%);
+                }
+            
+                &::before{
+                    bottom: 0;
+                }
+
+                //active status
+
+                &.active::after{
+                    top: 50%;
+                    transform: rotate(45deg) translate(0, -50%);
+                }
+
+                &.active .header__burger-line{
+                    transform: scale(0) translate(0, 50%);
+                }
+
+                &.active::before{
+                    bottom: 50%;
+                    transform: rotate(-45deg) translate(0, 50%);
+                }
+
+
+		}
+
+}
+
+}

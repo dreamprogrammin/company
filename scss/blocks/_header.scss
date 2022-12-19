@@ -3,6 +3,7 @@
 .header {
     position: relative;
     width: 100%;
+    z-index: 10;
     &__top{
         background-color: $color-gold;
     }
@@ -90,7 +91,7 @@
 
     &__menu-list {
         @include flex-container(center, center);
-        gap: 30px
+        gap: 30px;
     }
 
     &__list-item {
@@ -104,6 +105,11 @@
             font-size: 14.5px;
         }
     }
+
+    &__burger{
+        display: none;
+    }
+
 }
 .info {
 
@@ -113,3 +119,9 @@
     }
 }
  
+
+.header{
+    &__popup{
+        display: none;
+    }
+}
