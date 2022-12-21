@@ -6,3 +6,11 @@
 		}
 }
 }
+
+@include mobile {
+      .service{
+            &__grids{
+                  grid-template-columns: repeat(auto-fit, minmax(auto, 176px));
+            }
+      }
+}
