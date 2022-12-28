@@ -351,10 +351,20 @@ a {
   align-items: center;
   row-gap: 20px;
 }
-.slider__container-img {
+.slider__container-line {
   max-width: 445px;
+  border: 2px solid #fff;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
 }
-.slider__container-img img {
+.slider__line-img {
+  display: flex;
+  position: relative;
+  left: 0;
+  transition: .3s ease-in-out;
+}
+.slider__line-img img {
   width: 100%;
 }
 .slider__container-buttons {

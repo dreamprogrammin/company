@@ -68,12 +68,28 @@
         row-gap: 20px;
     }
 
-	&__container-img {
-       max-width: 445px;
-       & img{
-        width: 100%;
-       }
+
+
+	&__container-line { 
+        max-width: 445px;
+        border: 2px solid #fff;
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
 	}
+
+
+	&__line-img {
+        display: flex;
+        position: relative;
+        left: 0;
+        transition: .3s ease-in-out;
+        & img{
+            width: 100%;
+        }
+	}
+
+
 
 
     &__container-buttons {
