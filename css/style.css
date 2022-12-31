@@ -119,6 +119,10 @@ a {
   position: relative;
   width: 100%;
   z-index: 10;
+  transition: 1s all;
+}
+.header.active {
+  position: fixed;
 }
 .header__top {
   background-color: #C8A35F;
@@ -353,7 +357,6 @@ a {
 }
 .slider__container-line {
   max-width: 445px;
-  border: 2px solid #fff;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
@@ -362,7 +365,7 @@ a {
   display: flex;
   position: relative;
   left: 0;
-  transition: .3s ease-in-out;
+  transition: .5s ease-in-out;
 }
 .slider__line-img img {
   width: 100%;

@@ -72,7 +72,6 @@
 
 	&__container-line { 
         max-width: 445px;
-        border: 2px solid #fff;
         position: relative;
         margin: 0 auto;
         overflow: hidden;
@@ -83,7 +82,7 @@
         display: flex;
         position: relative;
         left: 0;
-        transition: .3s ease-in-out;
+        transition: .5s ease-in-out;
         & img{
             width: 100%;
         }

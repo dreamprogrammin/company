@@ -8,14 +8,20 @@ function headerWrapperMenu() {
 }
 headerWrapperMenu()
 
-
-
-burger.addEventListener('click', function(){
+const burgerInit = () => {
     burger.classList.toggle('active')
     headerWrapper.classList.toggle('active')
     body.classList.toggle('lock')
-})
+} 
 
+const burgerClose = () =>{
+    burger.classList.remove('active')
+    headerWrapper.classList.remove('active')
+    body.classList.remove('lock')
+}
+
+
+burger.addEventListener('click', burgerInit)
 
 
 const header = document.querySelector('.header')
@@ -30,6 +36,28 @@ const headerListener = () =>{
 
 window.addEventListener('scroll', headerListener)
 
+//header scroll
+
+const headerListItem = document.querySelectorAll('.header__list-item[href*="#"]')
+
+console.log(headerListItem)
+
+headerListItem.forEach(element => {
+    if(element){
+        element.addEventListener('click', function(e){
+            console.log(element)
+            e.preventDefault()
+            headerListItemID = this.getAttribute('href')
+            console.log(headerListItemID)
+            document.querySelector(headerListItemID).scrollIntoView({
+                behavior : 'smooth', block : 'start'
+            })
+            burgerClose()
+        })
+    }
+})
+
+
 //slider 
 
 //Константы 
@@ -39,12 +67,10 @@ const sliderLineImg = document.querySelector('.slider__line-img'),
       sllderBtnPrev = document.querySelector('.prev')
 
 //Переменные
-
 let sliderCount = 0,
     sliderWidth
 
 //Функции 
-
 const sliderInit = () =>{
     sliderWidth = document.querySelector('.slider__container-line').offsetWidth
     sliderRolls()
@@ -70,10 +96,9 @@ const sliderInitPrev = () => {
 
 
 // Прослушивание
-
 window.addEventListener('resize' ,sliderInit)
 
-// иницилизация перелистование вперед назад
+// иницилизация перелистывание вперед назад
 sliderBtnNext.addEventListener('click', sliderInitNext)
 sllderBtnPrev.addEventListener('click', sliderInitPrev)
 

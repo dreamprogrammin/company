@@ -4,6 +4,10 @@
     position: relative;
     width: 100%;
     z-index: 10;
+    transition: 1s all;
+    &.active{
+        position: fixed;
+    }
     &__top{
         background-color: $color-gold;
     }
