@@ -1,12 +1,15 @@
 // header top
 
 .header {
-    position: relative;
+    position: fixed;
     width: 100%;
     z-index: 10;
     transition: 1s all;
+    transform: translateY(-145px);
     &.active{
         position: fixed;
+        transform: translateY(0);
+        transition: 1s all;
     }
     &__top{
         background-color: $color-gold;

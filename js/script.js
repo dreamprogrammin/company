@@ -34,6 +34,14 @@ const headerListener = () =>{
 //    console.log(windowScrollY)
 }
 
+
+const headerInit = () => {
+    header.classList.remove('active')
+    console.log('click')
+}
+
+// прослушивание header
+
 window.addEventListener('scroll', headerListener)
 
 //header scroll
@@ -53,6 +61,9 @@ headerListItem.forEach(element => {
                 behavior : 'smooth', block : 'start'
             })
             burgerClose()
+            setTimeout(() => {
+               header.classList.remove('active') 
+            }, 1000);
         })
     }
 })

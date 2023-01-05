@@ -77,6 +77,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   color: #fff;
+  position: relative;
 }
 body.lock {
   overflow: hidden;
@@ -116,13 +117,16 @@ a {
 }
 
 .header {
-  position: relative;
+  position: fixed;
   width: 100%;
   z-index: 10;
   transition: 1s all;
+  transform: translateY(-145px);
 }
 .header.active {
   position: fixed;
+  transform: translateY(0);
+  transition: 1s all;
 }
 .header__top {
   background-color: #C8A35F;
@@ -593,6 +597,11 @@ a {
 .footer__number {
   display: block;
   width: 100%;
+}
+
+.job {
+  position: absolute;
+  top: 50%;
 }
 
 @media (min-width: 1110px) {
