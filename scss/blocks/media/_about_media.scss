@@ -1,0 +1,8 @@
+@include tablet {
+    .about {
+        &__grids {
+            width: 400px;
+        }
+    }
+}
+

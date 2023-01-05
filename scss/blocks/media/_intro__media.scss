@@ -1,0 +1,20 @@
+@include dekstop-u {
+    .intro{
+
+        &__title{
+            font-size: 64px;
+        }
+    }
+};
+
+@include tablet {
+    .intro{
+        &__border{
+            padding: 20px 45px;
+        }
+
+        &__title{
+            margin-bottom: 15px;
+        }
+    }
+};

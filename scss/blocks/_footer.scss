@@ -1,0 +1,45 @@
+.footer {
+    width: 100%;
+    background-color: $color-gold;
+    &__wrapper {
+        @include flex-container(space-between,center);
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 65px 0;
+    }
+
+    &__adress {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        
+        /* #F2F2F2 */
+        
+        color: #F2F2F2;
+        
+        opacity: 0.8;
+    }
+
+    &__email {
+        width: 291px;
+        color: $color-dark;
+    }
+
+    &__items {
+        width: 291px;
+        @include flex-container(start, center);
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__number {
+        display: block;
+        width: 100%;
+    }
+
+    &__developer {
+    }
+}
+
