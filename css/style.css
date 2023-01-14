@@ -121,10 +121,8 @@ a {
   width: 100%;
   z-index: 10;
   transition: 1s all;
-  transform: translateY(-145px);
 }
 .header.active {
-  position: fixed;
   transform: translateY(0);
   transition: 1s all;
 }

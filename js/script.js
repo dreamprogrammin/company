@@ -28,10 +28,14 @@ const header = document.querySelector('.header')
 
 //header script
 
+let headerAnimate
+
 const headerListener = () =>{
     let windowScrollY = window.scrollY
     windowScrollY >= 120 ? header.classList.add('active') : header.classList.remove('active')
-//    console.log(windowScrollY)
+    if(headerAnimate == -145) {
+        header.style.transform = `translateY(${headerAnimate = 0}px)`
+    }
 }
 
 
@@ -42,11 +46,11 @@ const headerInit = () => {
 
 // прослушивание header
 
-window.addEventListener('scroll', headerListener)
 
 //header scroll
 
 const headerListItem = document.querySelectorAll('.header__list-item[href*="#"]')
+
 
 console.log(headerListItem)
 
@@ -62,12 +66,14 @@ headerListItem.forEach(element => {
             })
             burgerClose()
             setTimeout(() => {
-               header.classList.remove('active') 
-            }, 1000);
+               header.style.transform = `translateY(${headerAnimate = -145}px)`
+            }, 500);
         })
     }
 })
 
+
+window.addEventListener('scroll', headerListener)
 
 //slider 
 
