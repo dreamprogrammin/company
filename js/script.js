@@ -26,7 +26,7 @@ burger.addEventListener('click', burgerInit)
 
 const header = document.querySelector('.header')
 
-//header script
+//header scroll
 
 let headerAnimate
 
@@ -41,37 +41,41 @@ const headerListener = () =>{
 
 const headerInit = () => {
     header.classList.remove('active')
-    console.log('click')
 }
 
-// прослушивание header
+//header scroll script
 
+const headerListItem = document.querySelectorAll('.header__list-item[href*="#"]'),
+      job = document.querySelector('.job'),
+      jobContent = document.querySelector('.job__content'),
+      jobClose = document.querySelector('.job__close')
 
-//header scroll
+jobClose.addEventListener('click', () =>{
+    job.classList.remove('active')
+    jobContent.classList.remove('active')
+})
 
-const headerListItem = document.querySelectorAll('.header__list-item[href*="#"]')
-
-
-console.log(headerListItem)
 
 headerListItem.forEach(element => {
     if(element){
         element.addEventListener('click', function(e){
-            console.log(element)
             e.preventDefault()
             headerListItemID = this.getAttribute('href')
-            console.log(headerListItemID)
             document.querySelector(headerListItemID).scrollIntoView({
                 behavior : 'smooth', block : 'start'
             })
+            job.classList.toggle('active')
+            jobContent.classList.toggle('active')
             burgerClose()
             setTimeout(() => {
                header.style.transform = `translateY(${headerAnimate = -145}px)`
+               job.style.backgroundColor = 'rgba(98, 99, 100, 0.7)'
             }, 500);
         })
     }
 })
 
+//Прослушка header
 
 window.addEventListener('scroll', headerListener)
 
