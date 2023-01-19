@@ -48,12 +48,20 @@ const headerInit = () => {
 const headerListItem = document.querySelectorAll('.header__list-item[href*="#"]'),
       job = document.querySelector('.job'),
       jobContent = document.querySelector('.job__content'),
-      jobClose = document.querySelector('.job__close')
+      jobBtnClose = document.querySelector('.job__close')
 
-jobClose.addEventListener('click', () =>{
+//Функции
+jobBtnClose.addEventListener('click', () =>{
     job.classList.remove('active')
     jobContent.classList.remove('active')
+    body.style.overflow = ''
 })
+
+const jobInit = () => {
+    job.classList.toggle('active')
+    jobContent.classList.toggle('active') 
+    body.style.overflow = 'hidden'
+}
 
 
 headerListItem.forEach(element => {
@@ -64,12 +72,18 @@ headerListItem.forEach(element => {
             document.querySelector(headerListItemID).scrollIntoView({
                 behavior : 'smooth', block : 'start'
             })
-            job.classList.toggle('active')
-            jobContent.classList.toggle('active')
+            if(headerListItemID.length == 4){
+                jobInit()
+                setTimeout(() => {
+                    job.style.backgroundColor = 'rgb(172 172 172 / 50%)'
+                }, 500);
+            } else {
+                job.classList.remove('active')
+                jobContent.classList.remove('active')
+            }
             burgerClose()
             setTimeout(() => {
                header.style.transform = `translateY(${headerAnimate = -145}px)`
-               job.style.backgroundColor = 'rgba(98, 99, 100, 0.7)'
             }, 500);
         })
     }

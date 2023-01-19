@@ -24,11 +24,11 @@
         text-align: center;
         @include flex-container(center,center);
         border-radius: 10px;
-        top: -100%;
-        position: relative;
+        transform: translateY(-100%);
+        position: absolute;
         transition: .9s ease-in-out;
         &.active{
-            top: 0;
+            transform: translateY(0);
         }
     }
 
