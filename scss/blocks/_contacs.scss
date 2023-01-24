@@ -1,0 +1,41 @@
+.contacts {
+    @include flex-container(center,center);
+    transition: .3s ease-in-out;
+    display: none;
+    z-index: 2;
+    &.active{
+        @include flex-container(center,center);
+        height: 100vh;
+        background-color: rgba(172, 172, 172, 0.50);
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    &__wrapper {
+        @include flex-container(center,center);
+        flex-direction: column;
+        height: inherit;
+        gap: 20px;
+        height: 150px;
+        width: 250px;
+        background-color: $color-dark;
+        border-radius: 30px;
+    }
+
+    &__call {
+        background-color: $color-gold;
+        padding: 18px 48px;
+        color: $color-white;
+        transition: .3s ease-in-out;
+        border-radius: 10px;
+        height: 52px;
+        &:hover, &:focus {
+            background-color: $color-dark;
+            border: 1px solid $color-gold;
+            -webkit-box-shadow: 0px 0px 34px 1px rgba(200, 163, 95, 0.34);
+            -moz-box-shadow: 0px 0px 34px 1px rgba(200, 163, 95, 0.34);
+            box-shadow: 0px 0px 34px 1px rgba(200, 163, 95, 0.34);
+        }
+    }
+}

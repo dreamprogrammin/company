@@ -38,6 +38,10 @@ const headerListener = () =>{
     }
 }
 
+const headerAnimateInit = () => {
+    header.style.transform = `translateY(${headerAnimate = -145}px)`
+}
+
 
 const headerInit = () => {
     header.classList.remove('active')
@@ -48,21 +52,35 @@ const headerInit = () => {
 const headerListItem = document.querySelectorAll('.header__list-item[href*="#"]'),
       job = document.querySelector('.job'),
       jobContent = document.querySelector('.job__content'),
-      jobBtnClose = document.querySelector('.job__close')
+      btnClose = document.querySelectorAll('.close'),
+      contacts = document.querySelector('.contacts')
 
+
+      
 //Функции
-jobBtnClose.addEventListener('click', () =>{
-    job.classList.remove('active')
-    jobContent.classList.remove('active')
-    body.style.overflow = ''
-})
-
 const jobInit = () => {
     job.classList.toggle('active')
     jobContent.classList.toggle('active') 
     body.style.overflow = 'hidden'
 }
 
+const contactsInit = () =>{
+    contacts.classList.add('active')
+    body.style.overflow = 'hidden'
+}
+
+
+//Прослушивание 
+btnClose[0].addEventListener('click', () => {
+    job.classList.remove('active')
+    jobContent.classList.remove('active') 
+    body.style.overflow = ''
+})
+
+btnClose[1].addEventListener('click' ,() => {
+    contacts.classList.remove('active')
+    body.style.overflow = ''
+})
 
 headerListItem.forEach(element => {
     if(element){
@@ -72,19 +90,14 @@ headerListItem.forEach(element => {
             document.querySelector(headerListItemID).scrollIntoView({
                 behavior : 'smooth', block : 'start'
             })
+            setTimeout(headerAnimateInit , 1000)
             if(headerListItemID.length == 4){
                 jobInit()
-                setTimeout(() => {
-                    job.style.backgroundColor = 'rgb(172 172 172 / 50%)'
-                }, 500);
-            } else {
-                job.classList.remove('active')
-                jobContent.classList.remove('active')
-            }
-            burgerClose()
-            setTimeout(() => {
-               header.style.transform = `translateY(${headerAnimate = -145}px)`
-            }, 500);
+                setTimeout(() => { job.style.backgroundColor = 'rgb(172 172 172 / 50%)'}, 500);
+             }
+             if(headerListItemID.length == 9){
+                contactsInit()
+             }
         })
     }
 })
