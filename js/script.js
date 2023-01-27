@@ -98,6 +98,7 @@ headerListItem.forEach(element => {
              if(headerListItemID.length == 9){
                 contactsInit()
              }
+             burgerClose()
         })
     }
 })
