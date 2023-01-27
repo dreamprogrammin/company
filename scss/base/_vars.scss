@@ -1,0 +1,18 @@
+$color-gold : #C8A35F;
+$color-dark : #2F343A;
+$color-white :#fff;
+
+$breakpoints-xxl: 1110px;
+$breakpoints-xl: 1024px;
+$breakpoints-md: 763px;
+$breakpoints-sm: 576px;
+
+.title{
+    @extend %title;
+}
+
+@mixin flex-container ($jc, $ai) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}

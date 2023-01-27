@@ -1,0 +1,21 @@
+@import './base/reset';
+@import './base/vars';
+@import './base/base';
+@import './base/media_breakpoints';
+
+@import './blocks/header';
+@import './blocks/intro';
+@import './blocks/slider';
+@import './blocks/service';
+@import './blocks/about';
+@import './blocks/maps';
+@import './blocks/footer';
+@import './blocks/job';
+@import './blocks/contacs';
+
+
+@import './blocks/media/intro__media';
+@import './blocks/media/slider_media';
+@import './blocks/media/about_media';
+@import './blocks/media/service_media';
+@import './blocks/media/header_media';

@@ -1,0 +1,59 @@
+.intro {
+    background: url('../img/intro/intro_bg.jpeg') no-repeat center center;
+    
+    height: 100vh;
+    background-size: cover;
+
+    &__wrapper {
+        @include flex-container(center, center);
+        flex-direction: column;
+        height: 100vh;
+        position: relative;
+    }
+
+    &__border {
+        padding: 45px 72px;
+        border: 1px solid $color-gold;
+    }
+
+    &__title {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: calc(34px + 30 * (100vw / 1110));
+        line-height: 75px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        max-width: 777px;
+        min-height: 59px;
+        color: $color-white;
+        margin-bottom: 45px;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    &__text {
+        color: $color-white;
+        max-width: 777px;
+        text-align: center;
+    }
+
+    &__decor {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        width: 30px;
+        height: 30px;
+        background: url(../img/intro/mouse.svg) no-repeat center;
+        animation: animate-decor .8s linear infinite alternate;
+    }
+}
+
+@keyframes animate-decor {
+    0%{
+        bottom: 50px;
+    }
+    100%{
+        bottom: 70px;
+    }
+}

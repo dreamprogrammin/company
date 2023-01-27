@@ -1,0 +1,45 @@
+.job {
+    display: none;
+    transition: .3s ease-in-out;
+    &.active, &:focus{
+        display: block;
+        position: fixed;
+        height: 100%;
+        width: 100%; 	
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    &__wrapper {
+        @include flex-container(center,center);
+        height: inherit;
+        position: relative;
+    }
+
+    &__content {
+        width: 250px;
+        height: 100px;
+        background-color: $color-dark;
+        text-align: center;
+        @include flex-container(center,center);
+        border-radius: 10px;
+        transform: translateY(-100%);
+        position: absolute;
+        transition: .9s ease-in-out;
+        &.active{
+            transform: translateY(0);
+        }
+    }
+
+    &__close {
+    }
+}
+
+.close{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 48px;
+    cursor: pointer;
+}

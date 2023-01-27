@@ -1,0 +1,128 @@
+.slider {
+    position: relative;
+    height: 100vh;
+    margin-bottom: 120px;
+    &::after{
+        position: absolute;
+        content: '';
+        width: 33%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        background-color: #393F47;
+    }
+    &::before{
+        position: absolute;
+        content: '';
+        width: 33%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: 0;
+        background-color: #393F47;
+    }
+
+    &__wrapper {
+        @include flex-container(center, center);
+        flex-wrap: wrap;
+        height: 100vh;
+    }
+
+    &__content {
+        @include flex-container(center, flex-start);
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    &__content-title {
+        margin-bottom: 30px;
+        max-width: 445px;
+    }
+
+    &__content-text {
+        margin-bottom: 50px;
+        max-width: 345px;
+        line-height: 28px;
+
+        color: $color-white;
+    }
+
+    &__contnet-button {
+        background-color: $color-gold;
+        padding: 18px 48px;
+        color: $color-white;
+        transition: .3s ease-in-out;
+        height: 52px;
+        &:hover, &:focus {
+            background-color: $color-dark;
+            border: 1px solid $color-gold;
+            -webkit-box-shadow: 0px 0px 34px 1px rgba(200, 163, 95, 0.34);
+            -moz-box-shadow: 0px 0px 34px 1px rgba(200, 163, 95, 0.34);
+            box-shadow: 0px 0px 34px 1px rgba(200, 163, 95, 0.34);
+        }    
+    }
+
+    &__container {
+        z-index: 1;
+        @include flex-container(center,center);
+        row-gap: 20px;
+    }
+
+
+
+	&__container-line { 
+        max-width: 445px;
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+	}
+
+
+	&__line-img {
+        display: flex;
+        position: relative;
+        left: 0;
+        transition: .5s ease-in-out;
+        & img{
+            width: 100%;
+        }
+	}
+
+
+
+
+    &__container-buttons {
+        z-index: 1;
+        height: 265px;
+        @include flex-container(space-between, center);
+        flex-direction: column;
+        column-gap: 20px;
+    }
+
+    &__button {
+        cursor: pointer;
+        height: 20px;
+        width: 165px;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: $color-gold;
+        transition: .3s ease-in-out;
+        &.next{
+            text-align: start;
+            background: url('../img/slider-img/arrow-next.svg') no-repeat 90% center;
+            &:hover, &:focus{
+                background: url('../img/slider-img/arrow-next.svg') no-repeat right;
+            }
+        }
+        &.prev{
+            text-align: end;
+            background: url('../img/slider-img/arrow-prev.svg') no-repeat 10% center;
+            &:hover, &:focus{
+                background: url('../img/slider-img/arrow-prev.svg') no-repeat left;
+            }
+        }
+    }
+
+}
+

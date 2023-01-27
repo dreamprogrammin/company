@@ -1,0 +1,45 @@
+body{
+    background-color: $color-dark;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: $color-white;
+    position: relative;
+    &.lock {
+        overflow: hidden;
+    }
+}
+
+a{
+    color: $color-white;
+}
+
+.container {
+    max-width: 1130px;
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+%title{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: calc(22px + 18 * (100vw / 1110));
+    line-height: 49px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-white;
+    position: relative;
+    padding-top: 40px;
+    &::after{
+        position: absolute;
+        content: '';
+        width: 90px;
+        height: 6px;
+        top: 0;
+        left: 0;
+        background-color: $color-gold;
+    }
+}
